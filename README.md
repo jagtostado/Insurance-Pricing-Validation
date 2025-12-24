@@ -1,66 +1,33 @@
 # Insurance-Pricing-Validation
-What is this project?
 
-This project is a simple Python program that checks whether motor insurance prices are correct.
+## 📌 Overview
+
+This project is a simple Python program that validates motor insurance prices.
 
 Insurance prices depend on:
+- product type,
+- coverage variant,
+- deductible level.
 
-the type of product,
+The program automatically calculates the expected price using predefined business rules, detects inconsistencies in the input data, corrects them, and reports all detected pricing errors.
 
-the coverage variant,
+---
 
-and the deductible.
+## ⚙️ How It Works
 
-Because pricing data can contain mistakes, this program automatically:
+Each insurance product is defined by:
+- a **base price**,
+- a **variant factor** (basic, comfort, premium),
+- a **deductible factor** (100, 200, 500).
 
-calculates the correct price using predefined rules,
+The expected price is calculated by applying these factors step by step to the base product price.
 
-compares it with the given price,
+If the provided price does not match the expected value, the program replaces it with the correct one and logs the discrepancy.
 
-fixes the price if it is wrong,
+---
 
-and reports all detected inconsistencies.
+## 📊 Output
 
-How does it work?
-
-Each insurance product has:
-
-a base price,
-
-a variant factor (basic, comfort, premium),
-
-and a deductible factor (100, 200, 500).
-
-The expected price is calculated by applying these factors step by step to the base price.
-
-If the original price does not match the expected one, the program replaces it with the correct value and logs the change.
-
-What does the program return?
-
-Given a set of input prices, the program returns:
-
-a dictionary with corrected prices,
-
-and a list of price inconsistencies, showing what was wrong and how it was fixed.
-
-This makes the pricing logic easy to verify and audit.
-
-Why is this useful?
-
-This type of validation is useful when:
-
-pricing rules must be enforced consistently,
-
-pricing data comes from multiple sources,
-
-or incorrect prices need to be detected automatically.
-
-The project shows how business rules can be translated into clear and maintainable Python code.
-
-Notes
-
-The focus of the project is clarity and correctness.
-
-Business rules are explicit and easy to modify.
-
-The implementation is intentionally simple and easy to follow.
+Given a dictionary of input prices, the program produces:
+- a dictionary containing the **corrected prices**,
+- a list of **detected inconsistencies**, showing:
